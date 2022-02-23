@@ -29,7 +29,7 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-scm-plugin</artifactId>
+                <artifactId>maven-release-plugin</artifactId>
                 <configuration>
                     <goals>install</goals>
                 </configuration>
@@ -39,8 +39,7 @@
 
     <scm>
         <developerConnection>
-            scm:git:git@github.com:wlwlsus/sfg-pet-clinic.git
+            scm:git:https://github.com/wlwlsus/sfg-pet-clinic.git
         </developerConnection>
-      <tag>sfg-pet-clinic-0.0.1</tag>
   </scm>
 </project>
