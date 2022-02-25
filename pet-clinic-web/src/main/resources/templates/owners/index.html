@@ -17,9 +17,9 @@
         </thead>
         <tbody>
         <tr th:each="owner : ${owners}">
-            <td th:text="${owner?.id}">0</td>
-            <td th:text="${owner?.firstName}">first</td>
-            <td th:text="${owner?.lastName}">last</td>
+            <td th:text="${owner.id}">0</td>
+            <td th:text="${owner.firstName}">first</td>
+            <td th:text="${owner.lastName}">last</td>
         </tr>
         </tbody>
     </table>
