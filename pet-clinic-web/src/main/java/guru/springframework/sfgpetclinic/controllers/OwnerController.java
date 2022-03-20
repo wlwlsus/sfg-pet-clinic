@@ -17,6 +17,7 @@ import java.util.List;
 @Controller
 public class OwnerController {
 	private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateOwnerForm";
+	private static final String REDIRECT_OWNERS = "redirect:/owners/";
 
 	private final OwnerService ownerService;
 
@@ -53,7 +54,7 @@ public class OwnerController {
 		} else if (results.size() == 1) {
 			// 1 owner found
 			owner = results.get(0);
-			return "redirect:/owners/" + owner.getId();
+			return REDIRECT_OWNERS + owner.getId();
 		} else {
 			// multiple owners found
 			model.addAttribute("selections", results);
@@ -80,7 +81,7 @@ public class OwnerController {
 			return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
 		} else {
 			Owner savedOwner = ownerService.save(owner);
-			return "redirect:/owners/" + savedOwner.getId();
+			return REDIRECT_OWNERS + savedOwner.getId();
 		}
 	}
 
@@ -97,7 +98,7 @@ public class OwnerController {
 		} else {
 			owner.setId(ownerId);
 			Owner savedOwner = ownerService.save(owner);
-			return "redirect:/owners/" + savedOwner.getId();
+			return REDIRECT_OWNERS + savedOwner.getId();
 		}
 	}
 }
